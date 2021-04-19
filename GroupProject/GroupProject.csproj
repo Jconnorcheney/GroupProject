@@ -116,6 +116,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,20 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Flag_of_Alberta.png" />
+    <Content Include="Assets\Flag_of_British_Columbia.png" />
+    <Content Include="Assets\Flag_of_Canada.png" />
+    <Content Include="Assets\Flag_of_Manitoba.png" />
+    <Content Include="Assets\Flag_of_Newfoundland_and_Labrador.png" />
+    <Content Include="Assets\Flag_of_New_Brunswick.png" />
+    <Content Include="Assets\Flag_of_Nova_Scotia.png" />
+    <Content Include="Assets\Flag_of_Nunavut.png" />
+    <Content Include="Assets\Flag_of_Ontario.png" />
+    <Content Include="Assets\Flag_of_Prince_Edward_Island.png" />
+    <Content Include="Assets\Flag_of_Quebec.png" />
+    <Content Include="Assets\Flag_of_Saskatchewan.png" />
+    <Content Include="Assets\Flag_of_the_Northwest_Territories.png" />
+    <Content Include="Assets\Flag_of_Yukon.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
@@ -197,6 +214,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CasesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

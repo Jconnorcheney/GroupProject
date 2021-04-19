@@ -106,54 +106,54 @@ namespace GroupProject
             switch (provinceName)
             {
                 case "Alberta":
-                    pImage = "\\Assets\\Flags\\Flag_of_Alberta.png";
+                    pImage = "Assets/Flag_of_Alberta.png";
                     break;
 
                 case "BC":
-                    pImage = "\\Assets\\Flags\\Flag_of_British_Columbia.png";
+                    pImage = "Assets/Flag_of_British_Columbia.png";
                     break;
 
                 case "New Brunswick":
-                    pImage = "\\Assets\\Flags\\Flag_of_New_Brunswick.png";
+                    pImage = "Assets/Flag_of_New_Brunswick.png";
                     break;
 
                 case "NL":
-                    pImage = "\\Assets\\Flags\\Flag_of_Newfoundland_and_Labrador.png";
+                    pImage = "Assets/Flag_of_Newfoundland_and_Labrador.png";
                     break;
 
                 case "Nova Scotia":
-                    pImage =  "\\Assets\\Flags\\Flag_of_Nova_Scotia.png";
+                    pImage = "Assets/Flag_of_Nova_Scotia.png";
                     break;
 
                 case "Nunavut":
-                    pImage = "\\Assets\\Flags\\Flag_of_Nunavut.png";
+                    pImage = "Assets/Flag_of_Nunavut.png";
                     break;
 
                 case "NWT":
-                    pImage = "\\Assets\\Flags\\Flag_of_the_Northwest_Territories.png";
+                    pImage = "Assets/Flag_of_the_Northwest_Territories.png";
                     break;
 
                 case "Ontario":
-                    pImage = "\\Assets\\Flags\\Flag_of_Ontario.png";
+                    pImage = "Assets/Flag_of_Ontario.png";
                     break;
 
                 case "PEI":
-                    pImage = "\\Assets\\Flags\\Flag_of_Prince_Edward_Island.png";
+                    pImage = "Assets/Flag_of_Prince_Edward_Island.png";
                     break;
 
                 case "Quebec":
-                    pImage = "\\Assets\\Flags\\Flag_of_Quebec.png";
+                    pImage = "Assets/Flag_of_Quebec.png";
                     break;
 
                 case "Saskatchewan":
-                    pImage = "\\Assets\\Flags\\Flag_of_Saskatchewan.png";
+                    pImage = "Assets/Flag_of_Saskatchewan.png";
                     break;
 
                 case "Yukon":
-                    pImage = "\\Assets\\Flags\\Flag_of_Yukon.png";
+                    pImage = "Assets/Flag_of_Yukon.png";
                     break;
                 case "Manitoba":
-                    pImage = "\\Assets\\Flags\\Flag_of_Manitoba.png";
+                    pImage = "Assets/Flag_of_Manitoba.png";
                     break;
             }
 

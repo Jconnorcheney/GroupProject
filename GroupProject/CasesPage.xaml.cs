@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,7 +27,7 @@ namespace GroupProject
         public CasesPage()
         {
             this.InitializeComponent();
-            viewModel = new ProvinceViewModel();
+            this.viewModel = new ProvinceViewModel();
         }
 
         private void BackClick(object sender, RoutedEventArgs e)
@@ -46,6 +47,16 @@ namespace GroupProject
         private void HomeClick(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage), viewModel);
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(About));
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Exit();
         }
     }
 }

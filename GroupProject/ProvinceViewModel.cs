@@ -33,7 +33,8 @@ namespace GroupProject
         public long cumulativeVaccine { get; set; }
         public long cumulativeRecovered { get; set; }
         public long cumulativeTesting { get; set; }
-        public string provinceFlag { get; set; }
+        public string provinceFlag { get; set; } 
+        
 
 
 
@@ -85,7 +86,7 @@ namespace GroupProject
 
         public ProvinceViewModel()
         {
-
+            provinceFlag = "Assets/Flag_of_Canada.png";
             //Create the colelction
             Files = new ObservableCollection<ProvinceModel>();
 

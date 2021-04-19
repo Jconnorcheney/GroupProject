@@ -28,10 +28,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="332.8"/>
-            <ColumnDefinition Width="Auto" MinWidth="159.2"/>
-            <ColumnDefinition Width="Auto" MinWidth="848.8"/>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" MinWidth="192.8"/>
+            <ColumnDefinition Width="Auto" MinWidth="815.2"/>
+            <ColumnDefinition Width="Auto" MinWidth="3.2" />
+            <ColumnDefinition Width="Auto" MinWidth="4"/>
         </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Column="0" Grid.Row="1" Margin="0,10,10,11" Grid.ColumnSpan="2" >
             <ListView VerticalAlignment="Top"
@@ -41,17 +41,17 @@
                     SelectedItem="{x:Bind viewModel.SelectedFile, Mode=TwoWay}"
                 ></ListView>
 
-            
+
         </ScrollViewer>
 
-        <ItemsControl Grid.ColumnSpan="3" Margin="4,38,6,9" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.Column="2" Grid.RowSpan="2"
+        <ItemsControl Grid.ColumnSpan="2" Margin="4,38,3,9" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.Column="2" Grid.RowSpan="2"
 
                       
                       >
             <ItemsControl.RenderTransform>
                 <CompositeTransform Rotation="-0.388"/>
             </ItemsControl.RenderTransform>
-            <Image  Source="{x:Bind viewModel.provinceFlag, Mode=TwoWay}"/>
+            <Image Width="600px" Height="400px" Source="{x:Bind viewModel.provinceFlag,Mode=TwoWay}"/>
             <TextBlock Text="Province Name"  TextAlignment="Center" TextWrapping="Wrap" Height="25" Width="365"/>
             <TextBox TextWrapping="Wrap" Height="49" Width="364" TextAlignment="Center" IsReadOnly="True" FontSize="32" Text="{x:Bind viewModel.province, Mode=TwoWay}"/>
             <TextBlock Text="Total Active Cases"  TextAlignment="Center" TextWrapping="Wrap" Height="25" Width="365"/>
@@ -61,19 +61,19 @@
 
         </ItemsControl>
 
-        <CommandBar Height="50" Grid.ColumnSpan="6" Margin="0,0,-24,0">
+        <CommandBar Height="50" Grid.ColumnSpan="6" Margin="0,0,-152,0">
             <CommandBar.Content>
                 <TextBlock Text="{x:Bind viewModel.province, Mode=TwoWay}" TextWrapping="Wrap" Margin="12,14"/>
             </CommandBar.Content>
             <AppBarButton Icon="Forward" Label="Covid Data" IsEnabled ="true" Click="AppBarButton_Click"></AppBarButton>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Icon="Cancel" Label="Exit"/>
-                <AppBarButton Icon="Important" Label="About"/>
+                <AppBarButton Icon="Cancel" Label="Exit" Click="Exit_Click"/>
+                <AppBarButton Icon="Important" Label="About" Click="About_Click"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
-        <Grid Grid.Column="4" HorizontalAlignment="Left" Height="1000" Margin="7,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="0"/>
+        <Grid Grid.Column="5" HorizontalAlignment="Center" Height="1000" Grid.RowSpan="2" VerticalAlignment="Top" Width="0"/>
 
-        <Grid Grid.Column="4" HorizontalAlignment="Left" Height="996" Margin="2,4,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="3"/>
+        <Grid Grid.Column="4" HorizontalAlignment="Center" Height="996" Margin="0,4,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="3"/>
         <TextBox x:Name="FilterTextbox"
             IsEnabled="True"
             Text="{x:Bind viewModel.Filter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

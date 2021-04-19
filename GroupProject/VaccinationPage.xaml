@@ -27,7 +27,7 @@
             <ItemsControl.RenderTransform>
                 <CompositeTransform Rotation="-0.388"/>
             </ItemsControl.RenderTransform>
-            <Image Height="408" Width="590" Source="{x:Bind viewModel.provinceFlag}"/>
+            <Image  Source="{x:Bind viewModel.provinceFlag}"/>
 
             <TextBlock Text="Total Vaccines"  TextAlignment="Center" TextWrapping="Wrap" Height="25" Width="365"/>
             <TextBox Text="{x:Bind viewModel.cumulativeVaccine}" TextWrapping="Wrap" Height="49" Width="365" TextAlignment="Center" IsReadOnly="True" FontSize="32"/>
@@ -46,8 +46,8 @@
             <AppBarButton Icon="Home" Label="Province Selection" IsEnabled ="true" Click="HomeClick"></AppBarButton>
 
             <CommandBar.SecondaryCommands>
-                <AppBarButton Icon="Cancel" Label="Exit"/>
-                <AppBarButton Icon="Important" Label="About"/>
+                <AppBarButton Icon="Cancel" Label="Exit" Click="Exit_Click"/>
+                <AppBarButton Icon="Important" Label="About" Click="About_Click"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
         <Grid Grid.Column="3" HorizontalAlignment="Left" Height="1000" Margin="7,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="0"/>
