@@ -22,11 +22,11 @@ namespace GroupProject
     /// </summary>
     public sealed partial class CasesPage : Page
     {
-        ProvinceViewModel viewModel { get; set; }
+        public ProvinceViewModel viewModel { get; set; }
         public CasesPage()
         {
             this.InitializeComponent();
-            this.viewModel = new ProvinceViewModel();
+            viewModel = new ProvinceViewModel();
         }
     }
 }
