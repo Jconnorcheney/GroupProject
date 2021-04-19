@@ -10,6 +10,8 @@ using Windows.Storage.Search;
 using System.ComponentModel;
 using Windows.UI.Xaml.Controls;
 using System.IO;
+using System.Threading;
+
 namespace GroupProject
 {
     public class ProvinceViewModel : INotifyPropertyChanged
@@ -100,8 +102,8 @@ namespace GroupProject
             Files.Clear();
 
             FetchData tmpFetch = new FetchData();
+            
             tmpFetch.GetData();
-            //Yep
 
             _allFiles = tmpFetch.provinces;
 

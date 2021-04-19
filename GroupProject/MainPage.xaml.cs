@@ -28,9 +28,11 @@ namespace GroupProject
         public MainPage()
         {
             this.InitializeComponent();
+
             this.viewModel = new ProvinceViewModel();
             FetchData data = new FetchData();
             data.GetData();
+            
         }
     }
 }
