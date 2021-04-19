@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -40,6 +41,12 @@
         </ItemsControl>
 
         <CommandBar Height="50" Grid.ColumnSpan="5">
+            <CommandBar.Content>
+                <TextBlock Text="{x:Bind viewModel.province, Mode=TwoWay}" TextWrapping="Wrap" Margin="12,14"/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Back" Label="Province Selection" IsEnabled ="true" Click="BackClick"></AppBarButton>
+            <AppBarButton Icon="Home" Label="Province Selection" IsEnabled ="true" Click="HomeClick"></AppBarButton>
+            <AppBarButton Icon="Forward" Label="Vaccination Data" IsEnabled ="true" Click="ForwardClick"></AppBarButton>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Icon="Cancel" Label="Exit"/>
                 <AppBarButton Icon="Important" Label="About"/>
@@ -48,8 +55,6 @@
         <Grid Grid.Column="3" HorizontalAlignment="Left" Height="1000" Margin="7,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="0"/>
 
         <Grid Grid.Column="3" HorizontalAlignment="Left" Height="996" Margin="2,4,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="3"/>
-        <Button Content="Province Data" Grid.Column="2" Margin="-1,520,4,0" Grid.Row="1" VerticalAlignment="Top" Height="33" HorizontalAlignment="Stretch"/>
-        <Button Content="Vaccine Data" Grid.Column="3" Grid.Row="1" Margin="954,525,0,366" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="2"/>
-    </Grid>
 
+    </Grid>
 </Page>

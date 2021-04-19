@@ -28,5 +28,24 @@ namespace GroupProject
             this.InitializeComponent();
             viewModel = new ProvinceViewModel();
         }
+
+        private void BackClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage), viewModel);
+        }
+        private void ForwardClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(VaccinationPage), viewModel);
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            viewModel = (ProvinceViewModel)e.Parameter;
+        }
+
+        private void HomeClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage), viewModel);
+        }
     }
 }

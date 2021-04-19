@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace GroupProject
 {
@@ -19,11 +20,11 @@ namespace GroupProject
         public long cumulativeVaccine { get; set; }
         public long cumulativeRecovered { get; set; }
         public long cumulativeTesting { get; set; }
-        public string provinceFlag { get; set; }
+        public BitmapImage provinceFlag { get; set; }
 
 
 
-        public ProvinceModel(string province, long activeCases, long cumulativeCases, long cumulativeDeaths, long cumulativeVaccine, long cumulativeRecovered, long cumulativeTesting, string provFlag)
+        public ProvinceModel(string province, long activeCases, long cumulativeCases, long cumulativeDeaths, long cumulativeVaccine, long cumulativeRecovered, long cumulativeTesting, BitmapImage provFlag)
         {
             this.province = province;
             this.activeCases = activeCases;

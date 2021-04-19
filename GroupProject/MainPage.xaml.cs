@@ -27,13 +27,33 @@ namespace GroupProject
         public ProvinceViewModel viewModel { get; set; }
         public MainPage()
         {
+            
+            
             this.InitializeComponent();
-
             this.viewModel = new ProvinceViewModel();
+            
             //FetchData data = new FetchData();
             //data.GetData();
-            Console.WriteLine("wow");
+
             
         }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CasesPage), viewModel);
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            try
+            {
+                viewModel = (ProvinceViewModel)e.Parameter;
+            }
+            catch
+            {
+
+            }
+        }   
+
     }
 }

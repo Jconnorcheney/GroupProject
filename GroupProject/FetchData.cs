@@ -1,22 +1,27 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace GroupProject
 {
+
     public class FetchData
     {
-        public List<ProvinceModel> provinces;
-
-        public async void GetData()
+        public FetchData()
         {
-            this.provinces = new List<ProvinceModel>();
+
+        }
+
+
+        public async Task<List<ProvinceModel>> GetData()
+        {
+            List<ProvinceModel> provinces = new List<ProvinceModel>();
 
             string baseUrl = "https://api.opencovid.ca/summary";
 
@@ -27,7 +32,7 @@ namespace GroupProject
             long cumalativeVaccine;
             long cumalativeRecovered;
             long cumalativeTesting;
-            string provImage = "";
+            BitmapImage provImage;
 
             try
             {
@@ -65,7 +70,7 @@ namespace GroupProject
                                         Debug.WriteLine(province + " " + activeCases + " " + cumalativeCases + " " + cumalativeDeaths
                                             + " " + cumalativeVaccine + " " + cumalativeRecovered + " " + cumalativeTesting);
 
-                                        this.provinces.Add(GetProvinceData(province, activeCases, cumalativeCases, cumalativeDeaths, cumalativeVaccine,
+                                        provinces.Add(GetProvinceData(province, activeCases, cumalativeCases, cumalativeDeaths, cumalativeVaccine,
                                             cumalativeRecovered, cumalativeTesting, provImage));
                                     }
 
@@ -76,78 +81,89 @@ namespace GroupProject
                         }
                     }
                 }
+
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Oh noes! Can not read data " + ex.Message);
             }
 
+            return provinces;
+
         }
 
-        public static ProvinceModel GetProvinceData(string province, long aCases, long cACases, long cDeath, long cVaccine, long cRecovered, long cTesting, string provImage)
+        public static ProvinceModel GetProvinceData(string province, long aCases, long cACases, long cDeath, long cVaccine, long cRecovered, long cTesting, BitmapImage provImage)
         {
             return new ProvinceModel(province, aCases, cACases, cDeath, cVaccine, cRecovered, cTesting, provImage);
         }
 
-        public string GetProvinceFlag(string provinceName)
+        public BitmapImage GetProvinceFlag(string provinceName)
         {
             string pImage = "";
+            BitmapImage Image;
+            string root = Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
+            string path = root + @"\Assets\\Flags";
 
             switch (provinceName)
             {
                 case "Alberta":
-                    pImage = "./Assets/Flags/Flag_of_Alberta.png";
+                    pImage = path +"\\Flag_of_Alberta.png";
                     break;
 
                 case "BC":
-                    pImage = "./Assets/Flags/Flag_of_British_Columbia.png";
+                    pImage = path + "\\Flag_of_British_Columbia.png";
                     break;
 
                 case "New Brunswick":
-                    pImage = "./Assets/Flags/Flag_of_New_Brunswick.png";
+                    pImage = path + "\\Flag_of_New_Brunswick.png";
                     break;
 
                 case "NL":
-                    pImage = "./Assets/Flags/Flag_of_Newfoundland_and_Labrador.png";
+                    pImage = path + "\\Flag_of_Newfoundland_and_Labrador.png";
                     break;
 
                 case "Nova Scotia":
-                    pImage = "./Assets/Flags/Flag_of_Nova_Scotia.png";
+                    pImage = path + "\\Flag_of_Nova_Scotia.png";
                     break;
 
                 case "Nunavut":
-                    pImage = "./Assets/Flags/Flag_of_Nunavut.png";
+                    pImage = path + "\\Flag_of_Nunavut.png";
                     break;
 
                 case "NWT":
-                    pImage = "./Assets/Flags/Flag_of_the_Northwest_Territories.png";
+                    pImage = path + "\\Flag_of_the_Northwest_Territories.png";
                     break;
 
                 case "Ontario":
-                    pImage = "./Assets/Flags/Flag_of_Ontario.png";
+                    pImage = path + "\\Flag_of_Ontario.png";
                     break;
 
                 case "PEI":
-                    pImage = "./Assets/Flags/Flag_of_Prince_Edward_Island.png";
+                    pImage = path + "\\Flag_of_Prince_Edward_Island.png";
                     break;
 
                 case "Quebec":
-                    pImage = "./Assets/Flags/Flag_of_Quebec.png";
+                    pImage = path + "\\Flag_of_Quebec.png";
                     break;
 
-                case "Saskatwchean":
-                    pImage = "./Assets/Flags/Flag_of_Saskatchewan.png";
+                case "Saskatchewan":
+                    pImage = path + "\\Flag_of_Saskatchewan.png";
                     break;
 
                 case "Yukon":
-                    pImage = "./Assets/Flags/Flag_of_Yukon.png";
+                    pImage = path + "\\Flag_of_Yukon.png";
+                    break;
+                case "Manitoba":
+                    pImage = path + "\\Flag_of_Manitoba.png";
                     break;
             }
 
-            return pImage;
+            Image = new BitmapImage(new Uri(pImage, UriKind.Relative));
+            return Image;
 
 
         }
-    }
 
+    }
 }

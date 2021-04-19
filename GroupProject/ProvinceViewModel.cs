@@ -11,6 +11,7 @@ using System.ComponentModel;
 using Windows.UI.Xaml.Controls;
 using System.IO;
 using System.Threading;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace GroupProject
 {
@@ -32,7 +33,7 @@ namespace GroupProject
         public long cumulativeVaccine { get; set; }
         public long cumulativeRecovered { get; set; }
         public long cumulativeTesting { get; set; }
-        public string provinceFlag { get; set; }
+        public BitmapImage provinceFlag { get; set; }
 
 
 
@@ -96,18 +97,17 @@ namespace GroupProject
         }
 
 
-        public void CreateCollection()
+        public async void CreateCollection()
         {
             _allFiles.Clear();
             Files.Clear();
 
             FetchData tmpFetch = new FetchData();
 
-            tmpFetch.GetData();
+            //tmpFetch.GetData();
             //ProvinceModel provinceDemo = new ProvinceModel("Ontario", 100, 0, 1000, 123, 123, 100, "./Assets/Flags/Flag_of_Ontario.png");
             //_allFiles.Add(provinceDemo);
-
-            _allFiles = tmpFetch.provinces;
+            _allFiles = await tmpFetch.GetData();
 
 
             PerformFiltering();
