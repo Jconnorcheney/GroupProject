@@ -20,11 +20,11 @@ namespace GroupProject
         public long cumulativeVaccine { get; set; }
         public long cumulativeRecovered { get; set; }
         public long cumulativeTesting { get; set; }
-        public BitmapImage provinceFlag { get; set; }
+        public string provinceFlag { get; set; }
 
 
 
-        public ProvinceModel(string province, long activeCases, long cumulativeCases, long cumulativeDeaths, long cumulativeVaccine, long cumulativeRecovered, long cumulativeTesting, BitmapImage provFlag)
+        public ProvinceModel(string province, long activeCases, long cumulativeCases, long cumulativeDeaths, long cumulativeVaccine, long cumulativeRecovered, long cumulativeTesting, string provFlag)
         {
             this.province = province;
             this.activeCases = activeCases;
