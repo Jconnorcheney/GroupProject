@@ -33,22 +33,21 @@ namespace GroupProject
             this.InitializeComponent();
             this.viewModel = new ProvinceViewModel();
 
-            //FetchData data = new FetchData();
-            //data.GetData();
-
-
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(CasesPage), viewModel);
+            if (viewModel.hasSelected == true)
+            {
+                Frame.Navigate(typeof(CasesPage), this.viewModel);
+            }
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             try
             {
-                viewModel = (ProvinceViewModel)e.Parameter;
+                this.viewModel = new ProvinceViewModel();
             }
             catch
             {

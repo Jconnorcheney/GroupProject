@@ -40,7 +40,7 @@
 
 
         </ItemsControl>
-        <CommandBar Grid.ColumnSpan="5" Margin="0,0,0,5" VerticalAlignment="Stretch" >
+        <CommandBar Grid.ColumnSpan="5" Margin="0,0,0,5" VerticalAlignment="Stretch" Height="51">
             <CommandBar.Content>
                 <TextBlock Text="{x:Bind viewModel.province, Mode=TwoWay}" TextWrapping="Wrap" Margin="12,14"/>
             </CommandBar.Content>

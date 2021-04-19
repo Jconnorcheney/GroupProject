@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel VerticalAlignment="Top" Margin="12">
-        <TextBlock x:Name="appData" ToolTipService.ToolTip="Application Info" FontSize="24" TextAlignment="Center">
+        <TextBlock x:Name="appData" ToolTipService.ToolTip="Application Info" FontSize="24" TextAlignment="Center" TextWrapping="Wrap">
 
         </TextBlock>
     </StackPanel>

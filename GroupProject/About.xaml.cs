@@ -40,8 +40,8 @@ namespace GroupProject
                 "\n Developed by Ashraf, Connor and Charles." +
                 "\n Flag image credits: www.creazilla.com" +
                 "\n Covid API Data aquired: https://api.opencovid.ca/summary" +
-                "\n Test Tube photo - Martin Lopez:https://www.pexels.com/photo/person-putting-a-drop-on-test-tube-954583/ " +
-                "\n "
+                "\n Test Tube photo - Martin Lopez" +
+                "\n Covid Stats photo - Markus Spiske"
                 );
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)

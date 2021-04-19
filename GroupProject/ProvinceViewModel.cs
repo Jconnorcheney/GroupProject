@@ -23,7 +23,7 @@ namespace GroupProject
         public event PropertyChangedEventHandler PropertyChanged;
         private ProvinceModel _selectedFile;
         private string _filter;
-
+        public bool hasSelected = false;
 
 
         public string province { get; set; }
@@ -33,8 +33,8 @@ namespace GroupProject
         public long cumulativeVaccine { get; set; }
         public long cumulativeRecovered { get; set; }
         public long cumulativeTesting { get; set; }
-        public string provinceFlag { get; set; } 
-        
+        public string provinceFlag { get; set; }
+
 
 
 
@@ -50,6 +50,70 @@ namespace GroupProject
         //public string totalPartialVacines { get; set; }
         //public string totalUnvaccinated { get; set; }
 
+
+        public string GetProvinceFlag(string provinceName)
+        {
+            string pImage = "";
+
+
+            switch (provinceName)
+            {
+                case "Alberta":
+                    pImage = "Assets/Flag_of_Alberta.png";
+                    break;
+
+                case "BC":
+                    pImage = "Assets/Flag_of_British_Columbia.png";
+                    break;
+
+                case "New Brunswick":
+                    pImage = "Assets/Flag_of_New_Brunswick.png";
+                    break;
+
+                case "NL":
+                    pImage = "Assets/Flag_of_Newfoundland_and_Labrador.png";
+                    break;
+
+                case "Nova Scotia":
+                    pImage = "Assets/Flag_of_Nova_Scotia.png";
+                    break;
+
+                case "Nunavut":
+                    pImage = "Assets/Flag_of_Nunavut.png";
+                    break;
+
+                case "NWT":
+                    pImage = "Assets/Flag_of_the_Northwest_Territories.png";
+                    break;
+
+                case "Ontario":
+                    pImage = "Assets/Flag_of_Ontario.png";
+                    break;
+
+                case "PEI":
+                    pImage = "Assets/Flag_of_Prince_Edward_Island.png";
+                    break;
+
+                case "Quebec":
+                    pImage = "Assets/Flag_of_Quebec.png";
+                    break;
+
+                case "Saskatchewan":
+                    pImage = "Assets/Flag_of_Saskatchewan.png";
+                    break;
+
+                case "Yukon":
+                    pImage = "Assets/Flag_of_Yukon.png";
+                    break;
+                case "Manitoba":
+                    pImage = "Assets/Flag_of_Manitoba.png";
+                    break;
+            }
+
+            return pImage;
+
+
+        }
 
         public ProvinceModel SelectedFile
         {
@@ -71,7 +135,7 @@ namespace GroupProject
                     cumulativeVaccine = value.cumulativeVaccine;
                     cumulativeRecovered = value.cumulativeRecovered;
                     cumulativeTesting = value.cumulativeTesting;
-                    provinceFlag = value.provinceFlag;
+                    provinceFlag = GetProvinceFlag(province);
 
                 }
 
@@ -80,6 +144,7 @@ namespace GroupProject
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("activeCases"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("cumulativeRecovered"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("provinceFlag"));
+                hasSelected = true;
 
             }
         }
@@ -105,9 +170,7 @@ namespace GroupProject
 
             FetchData tmpFetch = new FetchData();
 
-            //tmpFetch.GetData();
-            //ProvinceModel provinceDemo = new ProvinceModel("Ontario", 100, 0, 1000, 123, 123, 100, "./Assets/Flags/Flag_of_Ontario.png");
-            //_allFiles.Add(provinceDemo);
+
             _allFiles = await tmpFetch.GetData();
 
 
