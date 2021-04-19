@@ -16,7 +16,7 @@ namespace GroupProject
 
         public async void GetData()
         {
-            provinces = new List<ProvinceModel>();
+            this.provinces = new List<ProvinceModel>();
 
             string baseUrl = "https://api.opencovid.ca/summary";
 
@@ -65,7 +65,7 @@ namespace GroupProject
                                         Debug.WriteLine(province + " " + activeCases + " " + cumalativeCases + " " + cumalativeDeaths
                                             + " " + cumalativeVaccine + " " + cumalativeRecovered + " " + cumalativeTesting);
 
-                                        provinces.Add(GetProvinceData(province, activeCases, cumalativeCases, cumalativeDeaths, cumalativeVaccine,
+                                        this.provinces.Add(GetProvinceData(province, activeCases, cumalativeCases, cumalativeDeaths, cumalativeVaccine,
                                             cumalativeRecovered, cumalativeTesting, provImage));
                                     }
 

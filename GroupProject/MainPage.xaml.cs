@@ -30,8 +30,9 @@ namespace GroupProject
             this.InitializeComponent();
 
             this.viewModel = new ProvinceViewModel();
-            FetchData data = new FetchData();
-            data.GetData();
+            //FetchData data = new FetchData();
+            //data.GetData();
+            Console.WriteLine("wow");
             
         }
     }

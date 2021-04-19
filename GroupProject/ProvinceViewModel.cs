@@ -102,8 +102,10 @@ namespace GroupProject
             Files.Clear();
 
             FetchData tmpFetch = new FetchData();
-            
+
             tmpFetch.GetData();
+            //ProvinceModel provinceDemo = new ProvinceModel("Ontario", 100, 0, 1000, 123, 123, 100, "./Assets/Flags/Flag_of_Ontario.png");
+            //_allFiles.Add(provinceDemo);
 
             _allFiles = tmpFetch.provinces;
 

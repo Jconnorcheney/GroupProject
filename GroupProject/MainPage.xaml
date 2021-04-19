@@ -12,7 +12,7 @@
     <Page.Resources>
         <CollectionViewSource x:Name="ProvinceCollection" 
                   Source="{x:Bind viewModel.Files}"></CollectionViewSource>
-        <DataTemplate x:Key="ProviceTemplate" x:DataType="local:ProvinceModel">
+        <DataTemplate x:Name="ProviceTemplate" x:DataType="local:ProvinceModel">
             <StackPanel>
                 <TextBlock Text="{x:Bind province}"/>
             </StackPanel>
@@ -35,13 +35,13 @@
         </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Column="0" Grid.Row="1" Margin="0,10,10,11" Grid.ColumnSpan="2" >
             <ListView VerticalAlignment="Top"
-                      x:Name="notesListView"
-                    
+                      x:Name="provinceListView"
+                    ItemsSource="{Binding Source={StaticResource ProvinceCollection}}"
+                    ItemTemplate="{Binding Source={StaticResource ProviceTemplate}}"
                     SelectedItem="{x:Bind viewModel.SelectedFile, Mode=TwoWay}"
                 ></ListView>
 
-            <!--ItemsSource="{Binding Source={StaticResource ProvinceCollection}}"
-                ItemTemplate="{Binding Source={StaticResource ProviceTemplate}}"-->
+            
         </ScrollViewer>
 
         <ItemsControl Grid.ColumnSpan="3" Margin="4,38,6,9" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.Column="2" Grid.RowSpan="2"
