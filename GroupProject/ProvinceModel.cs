@@ -11,8 +11,6 @@ namespace GroupProject
 
     public class ProvinceModel
     {
-
-
         public string province { get; set; }
         public long activeCases { get; set; }
         public long cumulativeCases { get; set; }

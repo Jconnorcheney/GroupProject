@@ -42,6 +42,7 @@ namespace GroupProject
 
                         using (HttpContent content = res.Content)
                         {
+                            // get the content of the http response message and converted to a string
                             var data = await content.ReadAsStringAsync();
 
                             if (data != null)
@@ -53,6 +54,7 @@ namespace GroupProject
 
                                 for (int i = 0; i < length; i++)
                                 {
+                                    // fetch the json data and convert to appropriate data type
                                     if (!($"{dataObj["summary"][i]["province"]}").Equals("Repatriated"))
                                     {
                                         province = ($"{dataObj["summary"][i]["province"]}");
@@ -62,9 +64,6 @@ namespace GroupProject
                                         cumalativeVaccine = long.Parse($"{dataObj["summary"][i]["cumulative_dvaccine"]}");
                                         cumalativeRecovered = long.Parse(($"{dataObj["summary"][i]["cumulative_recovered"]}"));
                                         cumalativeTesting = long.Parse(($"{dataObj["summary"][i]["cumulative_testing"]}"));
-
-                                        Debug.WriteLine(province + " " + activeCases + " " + cumalativeCases + " " + cumalativeDeaths
-                                            + " " + cumalativeVaccine + " " + cumalativeRecovered + " " + cumalativeTesting);
 
                                         provinces.Add(GetProvinceData(province, activeCases, cumalativeCases, cumalativeDeaths, cumalativeVaccine,
                                             cumalativeRecovered, cumalativeTesting, "No Image Supplied Give Error Pls"));
@@ -89,6 +88,7 @@ namespace GroupProject
 
         }
 
+        // create and return ProvinceModel 
         public static ProvinceModel GetProvinceData(string province, long aCases, long cACases, long cDeath, long cVaccine, long cRecovered, long cTesting, string provImage)
         {
             return new ProvinceModel(province, aCases, cACases, cDeath, cVaccine, cRecovered, cTesting, provImage);

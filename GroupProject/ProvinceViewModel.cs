@@ -36,21 +36,7 @@ namespace GroupProject
         public string provinceFlag { get; set; }
 
 
-
-
-        //public string countryName { get; set; }
-        //public string countryPop { get; set; }
-        //public string countryCapitol { get; set; }
-
-        //public string totalCases { get; set; }
-        //public string totalRecovered { get; set; }
-        //public string totalDeaths { get; set; }
-
-        //public string totalVacines { get; set; }
-        //public string totalPartialVacines { get; set; }
-        //public string totalUnvaccinated { get; set; }
-
-
+        // selects the flag image
         public string GetProvinceFlag(string provinceName)
         {
             string pImage = "";
@@ -115,6 +101,7 @@ namespace GroupProject
 
         }
 
+        // get the selected provice and data
         public ProvinceModel SelectedFile
         {
             get { return _selectedFile; }
@@ -162,7 +149,7 @@ namespace GroupProject
             PerformFiltering();
         }
 
-
+        // Display the provinces name
         public async void CreateCollection()
         {
             _allFiles.Clear();
@@ -177,7 +164,7 @@ namespace GroupProject
             PerformFiltering();
         }
 
-
+        // filter the province name
         public void PerformFiltering()
         {
             Files.Clear();
